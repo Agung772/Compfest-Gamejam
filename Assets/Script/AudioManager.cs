@@ -27,25 +27,29 @@ public class AudioManager : MonoBehaviour
             PlayerPrefs.SetFloat(_Audio, 0.7f);
         }
 
-        var audioButton = AudioButton.instance;
-        if (PlayerPrefs.GetFloat(_Audio) == 0)
+        if (AudioButton.instance != null)
         {
-            valueAudio = 0;
-            audioSource.volume = 0;
-            audioButton.GetComponent<Image>().sprite = audioButton.GetComponent<AudioButton>().logoAudio[0];
+            var audioButton = AudioButton.instance;
+            if (PlayerPrefs.GetFloat(_Audio) == 0)
+            {
+                valueAudio = 0;
+                audioSource.volume = 0;
+                audioButton.GetComponent<Image>().sprite = audioButton.GetComponent<AudioButton>().logoAudio[0];
+            }
+            else if (PlayerPrefs.GetFloat(_Audio) == 0.3f)
+            {
+                valueAudio = 1;
+                audioSource.volume = 0.3f;
+                audioButton.GetComponent<Image>().sprite = audioButton.GetComponent<AudioButton>().logoAudio[1];
+            }
+            else if (PlayerPrefs.GetFloat(_Audio) == 0.7f)
+            {
+                valueAudio = 2;
+                audioSource.volume = 0.7f;
+                audioButton.GetComponent<Image>().sprite = audioButton.GetComponent<AudioButton>().logoAudio[2];
+            }
         }
-        else if (PlayerPrefs.GetFloat(_Audio) == 0.3f)
-        {
-            valueAudio = 1;
-            audioSource.volume = 0.3f;
-            audioButton.GetComponent<Image>().sprite = audioButton.GetComponent<AudioButton>().logoAudio[1];
-        }
-        else if (PlayerPrefs.GetFloat(_Audio) == 0.7f)
-        {
-            valueAudio = 2;
-            audioSource.volume = 0.7f;
-            audioButton.GetComponent<Image>().sprite = audioButton.GetComponent<AudioButton>().logoAudio[2];
-        }
+
 
         audioSource.clip = gameplayBGM;
         audioSource.Play();
