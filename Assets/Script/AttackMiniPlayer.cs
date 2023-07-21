@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class AttackMiniPlayer : MonoBehaviour
 {
+    public static AttackMiniPlayer instance;
+
     public int demege;
     [SerializeField] float maxCD;
     float cd;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] Transform point;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         CanvasGameplay.instance.cdAttack.fillAmount = cd / maxCD;
@@ -21,7 +27,6 @@ public class AttackMiniPlayer : MonoBehaviour
         {
             GameObject projectile = Instantiate(projectilePrefab, point.position, point.rotation);
             projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.Impulse);
-            Destroy(projectile, 5);
 
             StartCoroutine(Coroutine());
             IEnumerator Coroutine()

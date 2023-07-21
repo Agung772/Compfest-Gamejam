@@ -8,6 +8,7 @@ public class GameplayManager : MonoBehaviour
 {
     public static GameplayManager instance;
 
+    public int stage;
 
     private void Awake()
     {

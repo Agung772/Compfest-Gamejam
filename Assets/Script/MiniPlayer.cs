@@ -20,6 +20,7 @@ public class MiniPlayer : MonoBehaviour
 
     private void Start()
     {
+        transform.parent = null;
         posisiAwal = transform.position;
     }
 

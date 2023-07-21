@@ -14,6 +14,8 @@ public class CanvasGameplay : MonoBehaviour
     public Button attackButton;
     public Image cdAttack;
 
+    public TextMeshProUGUI demegeText;
+
     private void Awake()
     {
         instance = this;

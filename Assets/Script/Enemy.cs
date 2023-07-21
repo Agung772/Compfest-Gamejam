@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public bool active;
+    public int hp = 100;
     [SerializeField] Transform range;
     private void Update()
     {
@@ -49,7 +50,6 @@ public class Enemy : MonoBehaviour
     public void Attack()
     {
         GameObject projectile = Instantiate(projectilePrefab, point.position, point.rotation);
-        projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.Impulse);
-        Destroy(projectile, 5);
+        projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 30, ForceMode.Impulse);
     }
 }
