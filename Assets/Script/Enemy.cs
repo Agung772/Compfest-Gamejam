@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
         {
             var player = Player.instance.transform.position;
             Quaternion rotTarget = Quaternion.LookRotation(new Vector3(player.x, 0, player.z) - new Vector3(transform.position.x, 0, transform.position.z));
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, 100 * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, 300 * Time.deltaTime);
 
             if (Quaternion.Angle(transform.rotation, rotTarget) < 5)
             {

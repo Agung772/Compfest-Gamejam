@@ -10,7 +10,7 @@ public class Mode : MonoBehaviour
     bool change;
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             if (!change)
             {
@@ -23,8 +23,10 @@ public class Mode : MonoBehaviour
             else
             {
                 change = false;
-                player.active = true;
+                //player.active = true;
                 miniPlayer.active = false;
+
+                miniPlayer.back = true;
             }
         }
     }

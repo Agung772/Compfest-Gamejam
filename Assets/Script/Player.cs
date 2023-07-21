@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     {
         hp = maxHp;
         active = true;
+
+        UpdateUI();
     }
     private void Update()
     {
@@ -35,5 +37,18 @@ public class Player : MonoBehaviour
         Vector3 v3 = new Vector3(inputX, 0, inputZ);
 
         characterController.Move(v3 * speed * Time.deltaTime);
+    }
+
+    public void HitPlayer(int value)
+    {
+        hp -= value;
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        CanvasGameplay.instance.bar.fillAmount = hp / maxHp;
+        CanvasGameplay.instance.hpText.text = hp.ToString();
+
     }
 }
