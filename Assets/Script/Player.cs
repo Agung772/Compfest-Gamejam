@@ -6,77 +6,68 @@ public class Player : MonoBehaviour
 {
     public static Player instance;
 
-    public bool bigPlayer;
-    public float speedPlayer;
+    public bool active;
 
-    [SerializeField]
-    GameObject topiPlayer;
+    public float maxHp = 100;
+    float hp;
+    [SerializeField] float speed = 5;
+    [SerializeField] float heading = 5;
+    [SerializeField] CharacterController characterController;
 
-    [SerializeField]
-    new Rigidbody rigidbody;
-
-    float offsetTopi;
-
-    public float aklerasi;
-
-    public ParticleSystem particelPlayer;
-
+    public Transform pointMinirobot;
     private void Awake()
     {
         instance = this;
     }
-
     private void Start()
     {
-        topiPlayer.transform.parent = null;
+        hp = maxHp;
+        active = true;
 
-        SetSmallPlayer();
+        UpdateUI();
     }
-
     private void Update()
     {
-        topiPlayer.transform.position = Vector3.Lerp(topiPlayer.transform.position, transform.position + Vector3.up * offsetTopi, 100 * Time.deltaTime);
-
-
-        MovePlayer();
-
-
-        if (aklerasi < 1)
-        {
-            aklerasi += Time.deltaTime * 0.08f;
-        }
+        if (active)
+        Move();
     }
 
-    void MovePlayer()
+    void Move()
     {
-        float verticalInput = Input.GetAxis("Vertical");
+        float inputX = Input.GetAxis("Horizontal");
+        float inputZ = Input.GetAxis("Vertical");
 
-        speedPlayer += Time.deltaTime * 0.02f;
+        Vector3 v3 = new Vector3(inputX, 0, inputZ);
 
-        rigidbody.AddForce(Vector3.forward * 1 * speedPlayer * aklerasi);
+        characterController.Move(v3 * speed * Time.deltaTime);
 
-
-        if (rigidbody.velocity.z > speedPlayer)
+        float inputXRaw = Input.GetAxisRaw("Horizontal");
+        float inputZRaw = Input.GetAxisRaw("Vertical");
+        Vector2 v2 = new Vector2(inputXRaw, inputZRaw);
+        if (v2.magnitude > 0.5f)
         {
-            rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, speedPlayer);
+            print(v2.magnitude);
+            heading = Mathf.Atan2(inputX, inputZ);
+            transform.rotation = Quaternion.Euler(0, heading * Mathf.Rad2Deg, 0);
         }
-        if (rigidbody.velocity.z < -speedPlayer)
+
+    }
+
+    public void HitPlayer(int value)
+    {
+        hp -= value;
+        if (hp <= 0)
         {
-            rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, -speedPlayer);
+            hp = 0;
+            GameplayManager.instance.PlayerDeath();
         }
+        UpdateUI();
     }
 
-    public void SetBigPlayer()
+    void UpdateUI()
     {
-        transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
-        offsetTopi = 1.45f;
-        bigPlayer = true;
-    }
-    public void SetSmallPlayer()
-    {
-        transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-        offsetTopi = 0.75f;
-        bigPlayer = false;
-    }
+        CanvasGameplay.instance.bar.fillAmount = hp / maxHp;
+        CanvasGameplay.instance.hpText.text = hp.ToString();
 
+    }
 }

@@ -8,6 +8,10 @@ public class CameraFollow : MonoBehaviour
     public float speed;
     public Vector3 offset;
 
+    private void OnValidate()
+    {
+        transform.position = Vector3.Lerp(transform.position, target.position + offset, 1000 * Time.deltaTime);
+    }
     private void Update()
     {
         transform.position = Vector3.Lerp(transform.position, target.position + offset, speed * Time.deltaTime);
