@@ -18,8 +18,7 @@ public class AttackMiniPlayer : MonoBehaviour
     }
     private void Start()
     {
-        CanvasGameplay.instance.cdAttack.fillAmount = cd / maxCD;
-        CanvasGameplay.instance.attackButton.interactable = true;
+        UpdateUI(false);
     }
     public void Attack()
     {
@@ -42,11 +41,24 @@ public class AttackMiniPlayer : MonoBehaviour
                     if (cd <= 0)
                     {
                         CanvasGameplay.instance.attackButton.interactable = true;
+                        break;
                     }
                     yield return null;
                 }
             }
         }
+
+    }
+
+    public void UpdateUI(bool value)
+    {
+
+        if (!value)
+        {
+            cd = 0;
+        }
+        CanvasGameplay.instance.cdAttack.fillAmount = cd / maxCD;
+        CanvasGameplay.instance.attackButton.interactable = value;
 
     }
 }

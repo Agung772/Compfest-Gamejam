@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public bool active;
     public int maxHp = 100;
     float hp;
+
+    public float speedAtt = 3;
     [SerializeField] Transform range;
 
     [SerializeField] Transform rotateMesh;
@@ -47,7 +49,7 @@ public class Enemy : MonoBehaviour
                     IEnumerator Coroutine()
                     {
                         Attack();
-                        yield return new WaitForSeconds(1);
+                        yield return new WaitForSeconds(speedAtt);
                         cdAtt = false;
                     }
                 }
