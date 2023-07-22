@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 7583465457169727547}
   - component: {fileID: 8443540212112291257}
   - component: {fileID: 5447971756532025826}
+  - component: {fileID: 6127212790609321553}
   m_Layer: 0
   m_Name: Cube.003 (1)
   m_TagString: Untagged
@@ -311,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8106490560438183986}
   m_LocalRotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3433692, y: -0.2893251, z: 0}
+  m_LocalPosition: {x: -0.3433692, y: -0.2893251, z: 0.1521}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4058055127023133629}
@@ -344,7 +345,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
+  - {fileID: 2100000, guid: 79f826d44f112604aba0f700c5666e83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -366,6 +367,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6127212790609321553
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106490560438183986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8678823145569952518, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
 --- !u!1 &9013877889236041422
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,8 +536,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1255605710908113952, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1521
       objectReference: {fileID: 0}
+    - target: {fileID: -804731622281664130, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79f826d44f112604aba0f700c5666e83, type: 2}
+    - target: {fileID: 882129737928793925, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91cfdfdf88d9cb44f94eb3cb499f5cc4, type: 2}
     - target: {fileID: 919132149155446097, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
       propertyPath: m_Name
       value: ArenaKotak
@@ -534,6 +557,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
   m_PrefabInstance: {fileID: 4601450519923770454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2524784891002775591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7146521406498821007, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
+  m_PrefabInstance: {fileID: 4601450519923770454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8696423536481331009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5148817236446094103, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
+  m_PrefabInstance: {fileID: 4601450519923770454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1311893173653508779
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2524784891002775591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8678823145569952518, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
+--- !u!64 &3127318652961409972
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696423536481331009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4579454407841743219, guid: 2c3e67cd3e37641489cd34d1158f1bda, type: 3}
 --- !u!1001 &8867988205602756190
 PrefabInstance:
   m_ObjectHideFlags: 0
