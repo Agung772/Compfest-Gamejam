@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class LaserMutar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.position.y, transform.eulerAngles.z);
     }
 }
