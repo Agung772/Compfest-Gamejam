@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
     void UpdateUI()
     {
         CanvasGameplay.instance.bar.fillAmount = hp / maxHp;
-        CanvasGameplay.instance.hpText.text = hp.ToString();
+        CanvasGameplay.instance.hpText.text = hp + "/" + maxHp;
 
     }
 }

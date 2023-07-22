@@ -26,7 +26,7 @@ public class GameplayManager : MonoBehaviour
     public void UpStage()
     {
         stage++;
-        CanvasGameplay.instance.stageText.text = "Stage : " + stage;
+        CanvasGameplay.instance.stageText.text = "Tingkat : " + stage;
     }
 
     public void PlayerDeath()
