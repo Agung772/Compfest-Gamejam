@@ -15,6 +15,7 @@ public class CanvasGameplay : MonoBehaviour
     public Image cdAttack;
 
     public TextMeshProUGUI demegeText;
+    public TextMeshProUGUI stageText;
 
     private void Awake()
     {

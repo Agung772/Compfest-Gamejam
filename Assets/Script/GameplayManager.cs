@@ -18,7 +18,15 @@ public class GameplayManager : MonoBehaviour
 
     private void Start()
     {
-        stage = 1;
+        UpStage();
+
+        SetDemegeEnemy();
+    }
+
+    public void UpStage()
+    {
+        stage++;
+        CanvasGameplay.instance.stageText.text = "Stage : " + stage;
     }
 
     public void PlayerDeath()
@@ -33,5 +41,13 @@ public class GameplayManager : MonoBehaviour
     public void UpgDemegeEnemy()
     {
 
+    }
+    public void SetDemegeEnemy()
+    {
+        Enemy[] enemys = FindObjectsOfType<Enemy>();
+        for (int i = 0; i < enemys.Length; i++)
+        {
+            enemys[i].demege = demegeEnemy;
+        }
     }
 }
