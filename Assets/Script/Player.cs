@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     float hp;
     [SerializeField] float speed = 5;
     [SerializeField] float heading = 5;
-    [SerializeField] CharacterController characterController;
+    public CharacterController characterController;
 
     public Transform pointMinirobot;
     private void Awake()

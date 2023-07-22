@@ -2554,13 +2554,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2871824054672222472, guid: 3553922c841f97949a3f1e198c81d01d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5857093615444656054, guid: 3553922c841f97949a3f1e198c81d01d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+    - target: {fileID: 5784218647030857842, guid: 3553922c841f97949a3f1e198c81d01d, type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6727422796019261589, guid: 3553922c841f97949a3f1e198c81d01d, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2574,10 +2570,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 29b1735b6e3321647b42250ba4d5aec2, type: 2}
-    - target: {fileID: 7583465457169727547, guid: 3553922c841f97949a3f1e198c81d01d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9013877889236041422, guid: 3553922c841f97949a3f1e198c81d01d, type: 3}
       propertyPath: m_Name
       value: Ground

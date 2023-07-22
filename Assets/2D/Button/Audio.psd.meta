@@ -10,7 +10,7 @@ TextureImporter:
     second: Audio_1
   - first:
       213: 2356825303544215458
-    second: Audio_1
+    second: Audio_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,6 +97,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -139,10 +151,10 @@ TextureImporter:
       name: Audio_0
       rect:
         serializedVersion: 2
-        x: 951
-        y: 427
-        width: 494
-        height: 495
+        x: 979
+        y: 453
+        width: 447
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +172,10 @@ TextureImporter:
       name: Audio_1
       rect:
         serializedVersion: 2
-        x: 1551
-        y: 427
-        width: 496
-        height: 495
+        x: 1579
+        y: 453
+        width: 449
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +193,10 @@ TextureImporter:
       name: Audio_2
       rect:
         serializedVersion: 2
-        x: 2151
-        y: 427
-        width: 495
-        height: 495
+        x: 2178
+        y: 453
+        width: 449
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 075e1ef9b1f85a144963b1d833532f1f
     internalID: 0
     vertices: []
     indices: 
