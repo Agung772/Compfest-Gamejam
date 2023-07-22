@@ -49,7 +49,7 @@ public class SpawnMap : MonoBehaviour
     public bool[] randomBool;
     void RandomIndex()
     {
-        int random = Random.RandomRange(0, matGround.Length);
+        int random = Random.Range(0, matGround.Length);
 
         if (randomBool.Length != matGround.Length) randomBool = new bool[matGround.Length];
 
