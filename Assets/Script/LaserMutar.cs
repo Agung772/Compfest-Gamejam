@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LaserMutar : MonoBehaviour
 {
+    public float speed;
+    float rotY;
     private void Update()
     {
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.position.y, transform.eulerAngles.z);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, rotY += Time.deltaTime * speed, transform.eulerAngles.z);
     }
 }
