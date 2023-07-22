@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     float hp;
     [SerializeField] float speed = 5;
     [SerializeField] float heading = 5;
-    [SerializeField] CharacterController characterController;
+    public CharacterController characterController;
 
     public Transform pointMinirobot;
     private void Awake()
@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
         Vector2 v2 = new Vector2(inputXRaw, inputZRaw);
         if (v2.magnitude > 0.5f)
         {
-            print(v2.magnitude);
             heading = Mathf.Atan2(inputX, inputZ);
             transform.rotation = Quaternion.Euler(0, heading * Mathf.Rad2Deg, 0);
         }

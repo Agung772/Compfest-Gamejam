@@ -2,21 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
     public bool active;
     public int maxHp = 100;
     float hp;
+
+    public float speedAtt = 3;
     [SerializeField] Transform range;
 
     [SerializeField] Transform rotateMesh;
     [SerializeField] Image bar;
+    [SerializeField] TextMeshProUGUI hpText;
 
     private void Start()
     {
         hp = maxHp;
         bar.fillAmount = hp / maxHp;
+        hpText.text = hp.ToString();
     }
     private void Update()
     {
@@ -44,7 +49,7 @@ public class Enemy : MonoBehaviour
                     IEnumerator Coroutine()
                     {
                         Attack();
-                        yield return new WaitForSeconds(1);
+                        yield return new WaitForSeconds(speedAtt);
                         cdAtt = false;
                     }
                 }
@@ -71,6 +76,7 @@ public class Enemy : MonoBehaviour
         hp -= value;
 
         bar.fillAmount = hp / maxHp;
+        hpText.text = hp.ToString();
         if (hp <= 0)
         {
             Destroy(gameObject);

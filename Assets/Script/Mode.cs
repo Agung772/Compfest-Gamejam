@@ -19,6 +19,8 @@ public class Mode : MonoBehaviour
                 miniPlayer.active = true;
 
                 miniPlayer.SavePosisi();
+                CanvasGameplay.instance.changeMode.image.sprite = CanvasGameplay.instance.changeMode.modeMinirobot;
+                AttackMiniPlayer.instance.UpdateUI(true);
             }
             else
             {
@@ -27,6 +29,8 @@ public class Mode : MonoBehaviour
                 miniPlayer.active = false;
 
                 miniPlayer.back = true;
+                CanvasGameplay.instance.changeMode.image.sprite = CanvasGameplay.instance.changeMode.modeRobot;
+                AttackMiniPlayer.instance.UpdateUI(false);
             }
         }
     }

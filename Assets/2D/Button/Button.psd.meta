@@ -3,15 +3,6 @@ guid: 4ade4846cf831954b91767c2f82421cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4086895658025638556
-    second: Audio_0
-  - first:
-      213: -5679096538048898286
-    second: Audio_1
-  - first:
-      213: 2356825303544215458
-    second: Audio_1
-  - first:
       213: 649223268058989734
     second: Button_0
   - first:
@@ -110,11 +101,11 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 100
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -122,11 +113,23 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 100
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -134,11 +137,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 100
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -146,11 +149,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 100
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -158,11 +161,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 100
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -175,10 +178,10 @@ TextureImporter:
       name: Button_0
       rect:
         serializedVersion: 2
-        x: 1028
-        y: 5554
-        width: 1337
-        height: 474
+        x: 1035
+        y: 5547
+        width: 1332
+        height: 481
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +199,10 @@ TextureImporter:
       name: Button_1
       rect:
         serializedVersion: 2
-        x: 2621
-        y: 5550
+        x: 2625
+        y: 5547
         width: 1851
-        height: 478
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +220,10 @@ TextureImporter:
       name: Button_2
       rect:
         serializedVersion: 2
-        x: 4683
-        y: 5676
-        width: 308
-        height: 209
+        x: 4687
+        y: 5674
+        width: 312
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +241,10 @@ TextureImporter:
       name: Button_3
       rect:
         serializedVersion: 2
-        x: 5024
-        y: 5645
-        width: 356
-        height: 294
+        x: 5026
+        y: 5641
+        width: 362
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,10 +262,10 @@ TextureImporter:
       name: Button_4
       rect:
         serializedVersion: 2
-        x: 5406
-        y: 5554
-        width: 480
-        height: 474
+        x: 5413
+        y: 5547
+        width: 474
+        height: 481
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +283,10 @@ TextureImporter:
       name: Button_5
       rect:
         serializedVersion: 2
-        x: 498
-        y: 4476
-        width: 1892
-        height: 823
+        x: 505
+        y: 4456
+        width: 1893
+        height: 851
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +304,10 @@ TextureImporter:
       name: Button_6
       rect:
         serializedVersion: 2
-        x: 2621
-        y: 4476
-        width: 368
-        height: 831
+        x: 2583
+        y: 4495
+        width: 384
+        height: 866
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,10 +325,10 @@ TextureImporter:
       name: Button_7
       rect:
         serializedVersion: 2
-        x: 3006
-        y: 4904
-        width: 367
-        height: 506
+        x: 3012
+        y: 4897
+        width: 369
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +346,10 @@ TextureImporter:
       name: Button_8
       rect:
         serializedVersion: 2
-        x: 3628
-        y: 793
+        x: 3630
+        y: 790
         width: 7840
-        height: 4282
+        height: 4283
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,10 +367,10 @@ TextureImporter:
       name: Button_9
       rect:
         serializedVersion: 2
-        x: 11869
+        x: 11879
         y: 3556
-        width: 1548
-        height: 1545
+        width: 1546
+        height: 1537
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,10 +388,10 @@ TextureImporter:
       name: Button_10
       rect:
         serializedVersion: 2
-        x: 13786
+        x: 13790
         y: 4333
-        width: 2028
-        height: 1093
+        width: 2025
+        height: 1092
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,10 +409,10 @@ TextureImporter:
       name: Button_11
       rect:
         serializedVersion: 2
-        x: 14952
-        y: 3500
-        width: 820
-        height: 824
+        x: 14954
+        y: 3493
+        width: 822
+        height: 830
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,7 +429,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 0b208231d2d9c364aac299fa3647376c
     internalID: 0
     vertices: []
     indices: 

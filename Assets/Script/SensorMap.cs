@@ -11,7 +11,8 @@ public class SensorMap : MonoBehaviour
         {
             SpawnMap.instance.Spawn();
 
-            GameplayManager.instance.stage++;
+
+
             animator.SetTrigger("Close");
             Destroy(gameObject);
         }

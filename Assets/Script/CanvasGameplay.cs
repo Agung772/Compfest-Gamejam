@@ -11,10 +11,13 @@ public class CanvasGameplay : MonoBehaviour
     public Image bar;
     public TextMeshProUGUI hpText;
 
+    public ChangeMode changeMode;
+
     public Button attackButton;
     public Image cdAttack;
 
     public TextMeshProUGUI demegeText;
+    public TextMeshProUGUI stageText;
 
     private void Awake()
     {

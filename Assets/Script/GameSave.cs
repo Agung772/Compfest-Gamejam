@@ -7,14 +7,14 @@ public class GameSave : MonoBehaviour
     public static GameSave instance;
 
     public float resolutionValue;
-    public float highScore;
+    public float highStage;
 
     //Anti typo
     string _DefaultData = "DefaultData";
     [HideInInspector]
     public string
         _Resolution = "Resolution",
-        _HighScore = "HighScore";
+        _HighStage = "HighStage";
     private void Awake()
     {
         instance = this;
@@ -34,7 +34,17 @@ public class GameSave : MonoBehaviour
     void LoadData()
     {
         resolutionValue = PlayerPrefs.GetFloat(_Resolution);
-        highScore = PlayerPrefs.GetFloat(_HighScore);
+        highStage = PlayerPrefs.GetFloat(_HighStage);
+    }
+
+    public void SaveStage(int value)
+    {
+        if (highStage > value)
+        {
+            PlayerPrefs.SetFloat(_HighStage, value);
+
+            LoadData();
+        }
     }
 
     public void SaveResolution(float value)
