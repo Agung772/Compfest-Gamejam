@@ -21,7 +21,7 @@ public class MiniPlayer : MonoBehaviour
     private void Start()
     {
         transform.parent = null;
-        posisiAwal = transform.position;
+        SavePosisi();
     }
 
     private void Update()
@@ -78,12 +78,12 @@ public class MiniPlayer : MonoBehaviour
     public bool back, defaultBool;
     void AutoMove()
     {
-        var player = Player.instance.transform.position;
-        Vector3 posDefault = new Vector3(player.x, 1.75f, player.z + -1);
+        var player = Player.instance.pointMinirobot.position;
+        Vector3 posDefault = new Vector3(player.x, 1.75f, player.z);
 
-        if (Vector3.Distance(transform.position, new Vector3(player.x, offsetY, player.z + -1)) > 0.1f && back)
+        if (Vector3.Distance(transform.position, new Vector3(player.x, offsetY, player.z)) > 0.1f && back)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(player.x, offsetY, player.z + -1), 5 * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(player.x, offsetY, player.z), 5 * Time.deltaTime);
             print("back");
         }
         else if (back)
@@ -121,6 +121,6 @@ public class MiniPlayer : MonoBehaviour
 
     public void SavePosisi()
     {
-        posisiAwal = transform.position;
+        posisiAwal = Player.instance.transform.position;
     }
 }

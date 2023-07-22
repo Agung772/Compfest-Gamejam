@@ -51,5 +51,15 @@ public class Enemy : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, point.position, point.rotation);
         projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 30, ForceMode.Impulse);
+        projectile.GetComponent<DemegeProjectile>().demege = demege;
+    }
+
+    public void Hit(int value)
+    {
+        hp -= value;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

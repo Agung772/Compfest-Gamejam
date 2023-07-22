@@ -27,6 +27,7 @@ public class AttackMiniPlayer : MonoBehaviour
         {
             GameObject projectile = Instantiate(projectilePrefab, point.position, point.rotation);
             projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 50, ForceMode.Impulse);
+            projectile.GetComponent<DemegeProjectile>().demege = demege;
 
             StartCoroutine(Coroutine());
             IEnumerator Coroutine()

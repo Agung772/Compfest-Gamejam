@@ -11,10 +11,12 @@ public class DemegeProjectile : MonoBehaviour
         if (collision.collider.GetComponent<Player>())
         {
             print("Hit Enemy");
+            collision.collider.GetComponent<Player>().HitPlayer(demege);
         }
         if (collision.collider.GetComponent<Enemy>())
         {
             print("Hit Enemy");
+            collision.collider.GetComponent<Enemy>().Hit(demege);
         }
 
     }
