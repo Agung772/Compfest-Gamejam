@@ -17,6 +17,7 @@ public class MiniPlayer : MonoBehaviour
 
     [SerializeField] CharacterController characterController;
     [SerializeField] AttackMiniPlayer attackMiniPlayer;
+    [SerializeField] GameObject aim;
 
     private void Start()
     {
@@ -29,21 +30,30 @@ public class MiniPlayer : MonoBehaviour
         if (active)
         {
             Move();
-
+            
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 attackMiniPlayer.Attack();
+            }
+            if (!aim.activeInHierarchy)
+            {
+                aim.SetActive(true);
             }
         }
         else
         {
             AutoMove();
+            if (aim.activeInHierarchy)
+            {
+                aim.SetActive(false);
+            }
         }
 
 
 
 
     }
+    float heading;
     void Move()
     {
         float inputX = Input.GetAxis("Horizontal");
@@ -52,6 +62,16 @@ public class MiniPlayer : MonoBehaviour
         Vector3 v3 = new Vector3(inputX, 0, inputZ);
 
         characterController.Move(v3 * speed * Time.deltaTime);
+
+        float inputXRaw = Input.GetAxisRaw("Horizontal");
+        float inputZRaw = Input.GetAxisRaw("Vertical");
+        Vector2 v2 = new Vector2(inputXRaw, inputZRaw);
+        if (v2.magnitude > 0.5f)
+        {
+            print(v2.magnitude);
+            heading = Mathf.Atan2(inputX, inputZ);
+            transform.rotation = Quaternion.Euler(0, heading * Mathf.Rad2Deg, 0);
+        }
 
         //Limit 
         if (transform.position.x > maxX + posisiAwal.x)
@@ -79,11 +99,12 @@ public class MiniPlayer : MonoBehaviour
     void AutoMove()
     {
         var player = Player.instance.pointMinirobot.position;
-        Vector3 posDefault = new Vector3(player.x, 1.75f, player.z);
+        Vector3 posDefault = new Vector3(player.x, player.y, player.z);
 
         if (Vector3.Distance(transform.position, new Vector3(player.x, offsetY, player.z)) > 0.1f && back)
         {
             transform.position = Vector3.Lerp(transform.position, new Vector3(player.x, offsetY, player.z), 5 * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, Player.instance.transform.eulerAngles.y, 0);
             print("back");
         }
         else if (back)
@@ -98,6 +119,7 @@ public class MiniPlayer : MonoBehaviour
             if (Vector3.Distance(transform.position, posDefault) > 0.1f && defaultBool)
             {
                 transform.position = Vector3.Lerp(transform.position, posDefault, 5 * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, Player.instance.transform.eulerAngles.y, 0);
                 print("default");
             }
             else if (defaultBool)
@@ -109,6 +131,7 @@ public class MiniPlayer : MonoBehaviour
             else
             {
                 transform.position = posDefault;
+                transform.rotation = Quaternion.Euler(0, Player.instance.transform.eulerAngles.y, 0);
             }
 
         }
