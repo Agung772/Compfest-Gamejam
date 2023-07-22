@@ -952,9 +952,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d07dbf2a615d649abbb346bde8347f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefab:
-  - {fileID: 9013877889236041422, guid: 3553922c841f97949a3f1e198c81d01d, type: 3}
+  groundPrefab: {fileID: 9013877889236041422, guid: 3553922c841f97949a3f1e198c81d01d, type: 3}
   jembatanPrefab: {fileID: 7801023213683145011, guid: 3a2019fe23799f54486e4ac3af014121, type: 3}
+  matGround:
+  - {fileID: 2100000, guid: 91cfdfdf88d9cb44f94eb3cb499f5cc4, type: 2}
+  - {fileID: 2100000, guid: 50c32efac3ce44c44ad4f90f42bf39ff, type: 2}
+  - {fileID: 2100000, guid: 9727f40953b3757499be6dcffe049e71, type: 2}
+  - {fileID: 2100000, guid: e6e234a5bfa46654481aeed091eafab8, type: 2}
+  - {fileID: 2100000, guid: 96d67f0c943e721429a75e06aaf9691b, type: 2}
+  matJembatan:
+  - {fileID: 2100000, guid: d1e3f11853c673543af1c374618a1bc7, type: 2}
+  - {fileID: 2100000, guid: bf50f30ee9bf7cd4cb411153cd890df5, type: 2}
+  - {fileID: 2100000, guid: 8dc0be12769fa1942a807ba64cb97dec, type: 2}
+  - {fileID: 2100000, guid: 64d3f609132bd2746be3aad07f354503, type: 2}
+  - {fileID: 2100000, guid: 4d84d3d6924e23e4db93df0864830be0, type: 2}
   posZ: 0
 --- !u!4 &525341341
 Transform:
