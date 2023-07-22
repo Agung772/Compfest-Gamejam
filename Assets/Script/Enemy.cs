@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] Transform rotateMesh;
     [SerializeField] Image bar;
+    [SerializeField] TextMeshProUGUI hpText;
 
     private void Start()
     {
         hp = maxHp;
         bar.fillAmount = hp / maxHp;
+        hpText.text = hp.ToString();
     }
     private void Update()
     {
@@ -71,6 +74,7 @@ public class Enemy : MonoBehaviour
         hp -= value;
 
         bar.fillAmount = hp / maxHp;
+        hpText.text = hp.ToString();
         if (hp <= 0)
         {
             Destroy(gameObject);

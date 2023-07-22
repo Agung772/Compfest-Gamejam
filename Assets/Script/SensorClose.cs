@@ -10,6 +10,9 @@ public class SensorClose : MonoBehaviour
         if (other.GetComponent<Player>())
         {
             animator.SetTrigger("Close");
+
+            GameplayManager.instance.UpStage();
+
             Destroy(gameObject);
         }
     }
