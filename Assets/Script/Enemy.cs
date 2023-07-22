@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public bool active;
     public int hp = 100;
     [SerializeField] Transform range;
+
+    [SerializeField] Transform rotateMesh;
     private void Update()
     {
         if (Vector3.Distance(transform.position, Player.instance.transform.position) < range.localScale.x / 2)
@@ -21,10 +23,10 @@ public class Enemy : MonoBehaviour
         if (active)
         {
             var player = Player.instance.transform.position;
-            Quaternion rotTarget = Quaternion.LookRotation(new Vector3(player.x, 0, player.z) - new Vector3(transform.position.x, 0, transform.position.z));
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotTarget, 300 * Time.deltaTime);
+            Quaternion rotTarget = Quaternion.LookRotation(new Vector3(player.x, 0, player.z) - new Vector3(rotateMesh.position.x, 0, rotateMesh.position.z));
+            rotateMesh.rotation = Quaternion.RotateTowards(rotateMesh.rotation, rotTarget, 300 * Time.deltaTime);
 
-            if (Quaternion.Angle(transform.rotation, rotTarget) < 5)
+            if (Quaternion.Angle(rotateMesh.rotation, rotTarget) < 3)
             {
                 if (!cdAtt)
                 {
@@ -50,7 +52,7 @@ public class Enemy : MonoBehaviour
     public void Attack()
     {
         GameObject projectile = Instantiate(projectilePrefab, point.position, point.rotation);
-        projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 30, ForceMode.Impulse);
+        projectile.GetComponent<Rigidbody>().AddForce(point.forward * 30, ForceMode.Impulse);
         projectile.GetComponent<DemegeProjectile>().demege = demege;
     }
 
