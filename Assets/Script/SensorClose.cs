@@ -9,6 +9,7 @@ public class SensorClose : MonoBehaviour
     {
         if (other.GetComponent<Player>())
         {
+            AudioManager.instance.TutupPinntuSFX();
             animator.SetTrigger("Close");
 
             GameplayManager.instance.UpStage();
