@@ -19,8 +19,39 @@ public class CanvasGameplay : MonoBehaviour
     public TextMeshProUGUI demegeText;
     public TextMeshProUGUI stageText;
 
+    public DeathUI deathUI;
+
+    public GameObject pauseUI;
+
     private void Awake()
     {
         instance = this;
+    }
+
+    bool pause;
+    public void Pause()
+    {
+        if (!pause)
+        {
+            pause = true;
+            pauseUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            pause = false;
+            pauseUI.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+        AudioManager.instance.ButtonClickSFX();
+    }
+
+    public void Mainmenu()
+    {
+        Time.timeScale = 1;
+        UIManager.instance.PindahScene("Mainmenu");
+
+        AudioManager.instance.ButtonClickSFX();
     }
 }

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public bool active;
 
     public float maxHp = 100;
-    float hp;
+    public float hp;
     [SerializeField] float speed = 5;
     [SerializeField] float heading = 5;
     public CharacterController characterController;
@@ -59,14 +59,19 @@ public class Player : MonoBehaviour
         {
             hp = 0;
             GameplayManager.instance.PlayerDeath();
+            active = false;
+
+            Mode.instance.active = false;
+            Mode.instance.miniPlayer.active = false;
+            print("FF");
         }
         UpdateUI();
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         CanvasGameplay.instance.bar.fillAmount = hp / maxHp;
-        CanvasGameplay.instance.hpText.text = hp.ToString();
+        CanvasGameplay.instance.hpText.text = hp + "/" + maxHp;
 
     }
 }

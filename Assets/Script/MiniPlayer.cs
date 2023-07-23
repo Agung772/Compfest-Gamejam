@@ -18,6 +18,7 @@ public class MiniPlayer : MonoBehaviour
     [SerializeField] CharacterController characterController;
     [SerializeField] AttackMiniPlayer attackMiniPlayer;
     [SerializeField] GameObject aim;
+    [SerializeField] Transform model3D;
 
     private void Start()
     {
@@ -39,6 +40,8 @@ public class MiniPlayer : MonoBehaviour
             {
                 aim.SetActive(true);
             }
+
+            model3D.localEulerAngles = Vector3.Lerp(model3D.localEulerAngles, new Vector3(model3D.localEulerAngles.x, 180, model3D.localEulerAngles.z), 5 * Time.deltaTime);
         }
         else
         {
@@ -47,6 +50,8 @@ public class MiniPlayer : MonoBehaviour
             {
                 aim.SetActive(false);
             }
+
+            model3D.localEulerAngles = Vector3.Lerp(model3D.localEulerAngles, new Vector3(model3D.localEulerAngles.x, 0, model3D.localEulerAngles.z), 5 * Time.deltaTime);
         }
 
 

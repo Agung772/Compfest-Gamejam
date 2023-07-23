@@ -51,13 +51,10 @@ public class AudioManager : MonoBehaviour
         }
 
 
-        audioSource.clip = gameplayBGM;
-        audioSource.Play();
-
         StartCoroutine(Coroutine());
         IEnumerator Coroutine()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.1f);
             SFX = true;
         }
     }
@@ -95,15 +92,21 @@ public class AudioManager : MonoBehaviour
     }
 
     //-------------------
-    [Space]
     [SerializeField]
-    public AudioClip gameplayBGM;
+    public AudioClip 
+        gameplayBGM,
+        mainmenuBGM;
 
     [SerializeField]
     public AudioClip
         buttonClickSFX,
-        loseSFX,
+        deathSFX,
         sihirSFX,
+        projectileRobotSFX,
+        projectileEnemySFX,
+        tutupPinntuSFX,
+        terkenaHitSFX,
+        changeModeSFX,
         tembokHancurSFX;
 
     bool SFX;
@@ -115,7 +118,15 @@ public class AudioManager : MonoBehaviour
         }
  
     }
-    public void LoseSFX() { audioSource.PlayOneShot(loseSFX); }
+    public void GameplayBGM() { audioSource.clip = gameplayBGM; audioSource.Play(); }
+    public void MainmenuBGM() { audioSource.clip = mainmenuBGM; audioSource.Play(); }
+
+    public void DeathSFX() { audioSource.PlayOneShot(deathSFX); }
     public void SihirSFX() { audioSource.PlayOneShot(sihirSFX); }
     public void TembokHancurSFX() { audioSource.PlayOneShot(tembokHancurSFX); }
+    public void ProjectileRobotSFX() { audioSource.PlayOneShot(projectileRobotSFX); }
+    public void ProjectileEnemySFX() { audioSource.PlayOneShot(projectileEnemySFX); }
+    public void TutupPinntuSFX() { audioSource.PlayOneShot(tutupPinntuSFX); }
+    public void TerkenaHitSFX() { audioSource.PlayOneShot(terkenaHitSFX); }
+    public void ChangeModeSFX() { audioSource.PlayOneShot(changeModeSFX); }
 }

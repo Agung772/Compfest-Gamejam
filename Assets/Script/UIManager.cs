@@ -32,24 +32,48 @@ public class UIManager : MonoBehaviour
             transisiAnimator.SetTrigger("Exit");
         }
     }
-
+    bool cd;
     public void PindahScene(string namaScene)
     {
-        StartCoroutine(Coroutine());
-        IEnumerator Coroutine()
+        if (!cd)
         {
-            TransisiScene("Start");
-            yield return new WaitForSeconds(2);
-            SceneManager.LoadScene(namaScene);
-            TransisiScene("Exit");
-        }
+            cd = true;
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
 
-        AudioManager.instance.ButtonClickSFX();
+                TransisiScene("Start");
+                yield return new WaitForSeconds(2);
+                SceneManager.LoadScene(namaScene);
+                TransisiScene("Exit");
+                cd = false;
+            }
+        }
+    }
+
+    public void Quit()
+    {
+        if (!cd)
+        {
+            cd = true;
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
+                TransisiScene("Start");
+                yield return new WaitForSeconds(2);
+                Application.Quit();
+                cd = false;
+            }
+        }
     }
 
     public void SpawnNotif(string value)
     {
+        if (spawnNotifText.transform.childCount > 0)
+        {
+            Destroy(spawnNotifText.transform.GetChild(0).gameObject);
+        }
         GameObject temp = Instantiate(notifText, spawnNotifText);
-        temp.GetComponent<TextMeshProUGUI>().text = value;
+        temp.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = value;
     }
 }

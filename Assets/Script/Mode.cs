@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class Mode : MonoBehaviour
 {
+    public static Mode instance;
+
+    public bool active = true;
+
     public Player player;
     public MiniPlayer miniPlayer;
 
     bool change;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Update()
     {
+        if (!active) return;
+
         if (Input.GetKeyUp(KeyCode.E))
         {
             if (!change)
@@ -32,6 +44,8 @@ public class Mode : MonoBehaviour
                 CanvasGameplay.instance.changeMode.image.sprite = CanvasGameplay.instance.changeMode.modeRobot;
                 AttackMiniPlayer.instance.UpdateUI(false);
             }
+
+            AudioManager.instance.ChangeModeSFX();
         }
     }
 }

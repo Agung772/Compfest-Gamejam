@@ -245,10 +245,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8580224976872340029}
   valueAudio: 0
-  gameplayBGM: {fileID: 8300000, guid: 58adda163b6cb1e44978c8b7f6efd0d5, type: 3}
-  buttonClickSFX: {fileID: 8300000, guid: 630a5263434b0ba4fbe7ae831fa50a2d, type: 3}
-  loseSFX: {fileID: 8300000, guid: 503793434205d1145b9b1e54aa9e83a5, type: 3}
+  gameplayBGM: {fileID: 8300000, guid: 37d271f18e4037547b99b539d9026830, type: 3}
+  mainmenuBGM: {fileID: 8300000, guid: 4c6e5669d6c64b645b13c7f8e403cb84, type: 3}
+  buttonClickSFX: {fileID: 8300000, guid: f0442491288803747bdb1ee60747d6c6, type: 3}
+  deathSFX: {fileID: 8300000, guid: 9e1db044bcc7ceb48b140de7e4f6baa0, type: 3}
   sihirSFX: {fileID: 8300000, guid: 0a9078f5adf0d044da7bb502164a4464, type: 3}
+  projectileRobotSFX: {fileID: 8300000, guid: ad3448c79d5a8e0499167e65c5bfe2a7, type: 3}
+  projectileEnemySFX: {fileID: 8300000, guid: a4c9ca1b114e09d429d5e67c80de4383, type: 3}
+  tutupPinntuSFX: {fileID: 8300000, guid: fa9ba264e10010045bceeff8dbfe2148, type: 3}
+  terkenaHitSFX: {fileID: 8300000, guid: 93cf0a5295ab8a843a0d93272d4e7d05, type: 3}
+  changeModeSFX: {fileID: 8300000, guid: 740d874cfd4f26341a2fefacce927c45, type: 3}
   tembokHancurSFX: {fileID: 8300000, guid: d2eada16427aa3940beaef7230c5e8ee, type: 3}
 --- !u!1 &8580224977651065705
 GameObject:
@@ -356,9 +362,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionValue: 0
-  highScore: 0
+  highStage: 0
   _Resolution: Resolution
-  _HighScore: HighScore
+  _HighStage: HighStage
 --- !u!1 &8580224978581580143
 GameObject:
   m_ObjectHideFlags: 0

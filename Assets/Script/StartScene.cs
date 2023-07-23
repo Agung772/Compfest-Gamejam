@@ -16,11 +16,12 @@ public class StartScene : MonoBehaviour
         //Scene
         if (scene == Scene.mainmenu)
         {
-
+            AudioManager.instance.MainmenuBGM();
         }
         else if (scene == Scene.gameplay)
         {
-
+            AudioManager.instance.GameplayBGM();
         }
+        Time.timeScale = 1;
     }
 }
