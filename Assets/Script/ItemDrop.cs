@@ -17,6 +17,7 @@ public class ItemDrop : MonoBehaviour
             Player.instance.UpdateUI();
             Destroy(gameObject);
 
+            AudioManager.instance.ButtonClickSFX();
         }
     }
 }

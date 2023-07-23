@@ -52,6 +52,8 @@ public class GameplayManager : MonoBehaviour
             CanvasGameplay.instance.deathUI.gameObject.SetActive(true);
             CanvasGameplay.instance.deathUI.Set(stage);
 
+            AudioManager.instance.DeathSFX();
+
             Enemy[] enemys = FindObjectsOfType<Enemy>();
             for (int i = 0; i < enemys.Length; i++)
             {
@@ -90,7 +92,7 @@ public class GameplayManager : MonoBehaviour
         {
             Player.instance.hp -= 50;
             UIManager.instance.SpawnNotif("Berhasil tingkatkan demege dan mengurangi HP");
-            AttackMiniPlayer.instance.demege += 10;
+            AttackMiniPlayer.instance.demege += 20;
             CanvasGameplay.instance.demegeText.text = AttackMiniPlayer.instance.demege.ToString();
             Player.instance.UpdateUI();
         }

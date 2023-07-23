@@ -51,13 +51,10 @@ public class AudioManager : MonoBehaviour
         }
 
 
-        audioSource.clip = gameplayBGM;
-        audioSource.Play();
-
         StartCoroutine(Coroutine());
         IEnumerator Coroutine()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             SFX = true;
         }
     }
@@ -95,9 +92,10 @@ public class AudioManager : MonoBehaviour
     }
 
     //-------------------
-    [Space]
     [SerializeField]
-    public AudioClip gameplayBGM;
+    public AudioClip 
+        gameplayBGM,
+        mainmenuBGM;
 
     [SerializeField]
     public AudioClip
@@ -120,6 +118,9 @@ public class AudioManager : MonoBehaviour
         }
  
     }
+    public void GameplayBGM() { audioSource.clip = gameplayBGM; audioSource.Play(); }
+    public void MainmenuBGM() { audioSource.clip = mainmenuBGM; audioSource.Play(); }
+
     public void DeathSFX() { audioSource.PlayOneShot(deathSFX); }
     public void SihirSFX() { audioSource.PlayOneShot(sihirSFX); }
     public void TembokHancurSFX() { audioSource.PlayOneShot(tembokHancurSFX); }

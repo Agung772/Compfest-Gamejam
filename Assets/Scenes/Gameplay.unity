@@ -1553,8 +1553,20 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 8dc0be12769fa1942a807ba64cb97dec, type: 2}
   - {fileID: 2100000, guid: 64d3f609132bd2746be3aad07f354503, type: 2}
   - {fileID: 2100000, guid: 4d84d3d6924e23e4db93df0864830be0, type: 2}
+  mapEarlyGame:
+  - {fileID: 9013877889236041422, guid: d9fe402edf6da29489d7bf9bb3a14ba4, type: 3}
+  - {fileID: 9013877889236041422, guid: aa5f912799bed9e4a80ed99aaab192f9, type: 3}
+  mapMidGame:
+  - {fileID: 9013877889236041422, guid: 6c85c6a9dc5dfce4ba0a2778b2e0dfe5, type: 3}
+  - {fileID: 9013877889236041422, guid: 419fbb7761fd03747b4ed56777e9fa84, type: 3}
+  mapLateGame:
+  - {fileID: 9013877889236041422, guid: dad2df003d38d164e85f1730ff7383dd, type: 3}
+  - {fileID: 9013877889236041422, guid: 13f34749964c0934c91cdcf87ee3252d, type: 3}
+  - {fileID: 9013877889236041422, guid: 3cbce627338fbd34286c5c664cace9e7, type: 3}
+  - {fileID: 9013877889236041422, guid: bea95c6a1a0f801418847d3da24ce73c, type: 3}
   posZ: 0
   randomBool: 
+  randomMapBool: 
 --- !u!4 &525341341
 Transform:
   m_ObjectHideFlags: 0
@@ -3281,7 +3293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1486ffb233acef40ad895ffba70a5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 0
+  scene: 1
 --- !u!4 &1278376293
 Transform:
   m_ObjectHideFlags: 0

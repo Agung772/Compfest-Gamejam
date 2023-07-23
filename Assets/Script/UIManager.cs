@@ -51,8 +51,28 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void Quit()
+    {
+        if (!cd)
+        {
+            cd = true;
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
+                TransisiScene("Start");
+                yield return new WaitForSeconds(2);
+                Application.Quit();
+                cd = false;
+            }
+        }
+    }
+
     public void SpawnNotif(string value)
     {
+        if (spawnNotifText.transform.childCount > 0)
+        {
+            Destroy(spawnNotifText.transform.GetChild(0).gameObject);
+        }
         GameObject temp = Instantiate(notifText, spawnNotifText);
         temp.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = value;
     }

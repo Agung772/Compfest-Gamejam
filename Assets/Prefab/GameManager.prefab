@@ -245,7 +245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8580224976872340029}
   valueAudio: 0
-  gameplayBGM: {fileID: 8300000, guid: 58adda163b6cb1e44978c8b7f6efd0d5, type: 3}
+  gameplayBGM: {fileID: 8300000, guid: 37d271f18e4037547b99b539d9026830, type: 3}
+  mainmenuBGM: {fileID: 8300000, guid: 4c6e5669d6c64b645b13c7f8e403cb84, type: 3}
   buttonClickSFX: {fileID: 8300000, guid: f0442491288803747bdb1ee60747d6c6, type: 3}
   deathSFX: {fileID: 8300000, guid: 9e1db044bcc7ceb48b140de7e4f6baa0, type: 3}
   sihirSFX: {fileID: 8300000, guid: 0a9078f5adf0d044da7bb502164a4464, type: 3}
