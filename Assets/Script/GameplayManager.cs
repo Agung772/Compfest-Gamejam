@@ -98,7 +98,7 @@ public class GameplayManager : MonoBehaviour
         }
         else
         {
-            UIManager.instance.SpawnNotif("HP kamu tidak cukup untuk tingkatkan kapasitas HP");
+            UIManager.instance.SpawnNotif("HP kamu tidak cukup untuk tingkatkan demege");
         }
 
         AudioManager.instance.ButtonClickSFX();

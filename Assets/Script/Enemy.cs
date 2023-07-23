@@ -92,6 +92,7 @@ public class Enemy : MonoBehaviour
         hpText.text = hp.ToString();
         if (hp <= 0)
         {
+            hp = 0;
             Instantiate(dropHPPrefab, transform.position, Quaternion.identity);
 
 

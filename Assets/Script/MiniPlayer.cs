@@ -32,7 +32,7 @@ public class MiniPlayer : MonoBehaviour
         {
             Move();
             
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.E))
             {
                 attackMiniPlayer.Attack();
             }
