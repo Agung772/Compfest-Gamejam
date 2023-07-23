@@ -106,25 +106,26 @@ public class MainmenuUI : MonoBehaviour
                 panduan = true;
                 cdPanduan = true;
                 panduanUI.SetActive(true);
-                panduanUI.GetComponent<Animator>().SetTrigger("Start");
+                panduanUI.GetComponent<Animator>().SetBool("Start", true);
                 yield return new WaitForSeconds(1.1f);
                 cdPanduan = false;
 
             }
             else if (panduan && !cdPanduan)
             {
-                uiActive = false;
+
 
                 panduan = false;
                 cdPanduan = true;
 
                 AudioManager.instance.ButtonClickSFX();
-                panduanUI.GetComponent<Animator>().SetTrigger("Exit");
+                panduanUI.GetComponent<Animator>().SetBool("Start", false);
                 yield return new WaitForSeconds(1);
                 panduanUI.SetActive(false);
 
                 yield return new WaitForSeconds(0.1f);
                 cdPanduan = false;
+                uiActive = false;
             }
 
         }
