@@ -32,17 +32,24 @@ public class UIManager : MonoBehaviour
             transisiAnimator.SetTrigger("Exit");
         }
     }
-
+    bool cd;
     public void PindahScene(string namaScene)
     {
-        StartCoroutine(Coroutine());
-        IEnumerator Coroutine()
+        if (!cd)
         {
-            TransisiScene("Start");
-            yield return new WaitForSeconds(2);
-            SceneManager.LoadScene(namaScene);
-            TransisiScene("Exit");
+            cd = true;
+            StartCoroutine(Coroutine());
+            IEnumerator Coroutine()
+            {
+
+                TransisiScene("Start");
+                yield return new WaitForSeconds(2);
+                SceneManager.LoadScene(namaScene);
+                TransisiScene("Exit");
+                cd = false;
+            }
         }
+
 
         AudioManager.instance.ButtonClickSFX();
     }

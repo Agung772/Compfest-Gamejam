@@ -356,9 +356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionValue: 0
-  highScore: 0
+  highStage: 0
   _Resolution: Resolution
-  _HighScore: HighScore
+  _HighStage: HighStage
 --- !u!1 &8580224978581580143
 GameObject:
   m_ObjectHideFlags: 0

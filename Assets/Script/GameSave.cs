@@ -39,7 +39,7 @@ public class GameSave : MonoBehaviour
 
     public void SaveStage(int value)
     {
-        if (highStage > value)
+        if (value > highStage)
         {
             PlayerPrefs.SetFloat(_HighStage, value);
 

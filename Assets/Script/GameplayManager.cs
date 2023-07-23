@@ -29,8 +29,15 @@ public class GameplayManager : MonoBehaviour
         CanvasGameplay.instance.stageText.text = "Tingkat : " + stage;
     }
 
+    bool useDeathUI;
     public void PlayerDeath()
     {
+        if (!useDeathUI)
+        {
+            useDeathUI = true;
+            CanvasGameplay.instance.deathUI.gameObject.SetActive(true);
+            CanvasGameplay.instance.deathUI.Set(stage);
+        }
 
     }
 
