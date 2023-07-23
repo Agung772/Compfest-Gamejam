@@ -21,8 +21,36 @@ public class CanvasGameplay : MonoBehaviour
 
     public DeathUI deathUI;
 
+    public GameObject pauseUI;
+
     private void Awake()
     {
         instance = this;
+    }
+
+    bool pause;
+    public void Pause()
+    {
+        if (!pause)
+        {
+            pause = true;
+            pauseUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            pause = false;
+            pauseUI.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+        AudioManager.instance.ButtonClickSFX();
+    }
+
+    public void Mainmenu()
+    {
+        UIManager.instance.PindahScene("Mainmenu");
+
+        AudioManager.instance.ButtonClickSFX();
     }
 }

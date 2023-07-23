@@ -44,6 +44,8 @@ public class Mode : MonoBehaviour
                 CanvasGameplay.instance.changeMode.image.sprite = CanvasGameplay.instance.changeMode.modeRobot;
                 AttackMiniPlayer.instance.UpdateUI(false);
             }
+
+            AudioManager.instance.ChangeModeSFX();
         }
     }
 }

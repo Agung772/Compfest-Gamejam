@@ -19,6 +19,8 @@ public class AttackMiniPlayer : MonoBehaviour
     private void Start()
     {
         UpdateUI(false);
+
+        CanvasGameplay.instance.demegeText.text = demege.ToString();
     }
     public void Attack()
     {
@@ -34,6 +36,9 @@ public class AttackMiniPlayer : MonoBehaviour
                 cd = maxCD;
                 CanvasGameplay.instance.cdAttack.fillAmount = cd / maxCD;
                 CanvasGameplay.instance.attackButton.interactable = false;
+
+                AudioManager.instance.ProjectileRobotSFX();
+
                 while (cd > 0)
                 {
                     cd -= Time.deltaTime;

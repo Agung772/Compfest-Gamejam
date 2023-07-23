@@ -49,14 +49,11 @@ public class UIManager : MonoBehaviour
                 cd = false;
             }
         }
-
-
-        AudioManager.instance.ButtonClickSFX();
     }
 
     public void SpawnNotif(string value)
     {
         GameObject temp = Instantiate(notifText, spawnNotifText);
-        temp.GetComponent<TextMeshProUGUI>().text = value;
+        temp.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = value;
     }
 }

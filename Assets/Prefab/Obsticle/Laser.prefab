@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 0.08937049, y: 0.08937049, z: 18.899635}
   m_Children: []
   m_Father: {fileID: 5184675999994239515}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6860777611432096073
 MonoBehaviour:
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2181420287c630d49ae3f8e94e9832e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  demege: 5
 --- !u!33 &5184675999955543300
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -152,10 +153,10 @@ Transform:
   m_LocalPosition: {x: -5.9, y: 0.38, z: 25.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3008254302583900601}
   - {fileID: 5184675999955543297}
   - {fileID: 7531348051846853945}
   - {fileID: 8668195100328791343}
-  - {fileID: 3008254302583900601}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -189,7 +190,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5184675999994239515}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &5398298691843370533
 ParticleSystem:
@@ -4973,7 +4974,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4a7edf84a1e5e6f4cb26cfd6a0640fdd, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4a7edf84a1e5e6f4cb26cfd6a0640fdd, type: 3}
       propertyPath: m_LocalScale.x
@@ -5077,7 +5078,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4a7edf84a1e5e6f4cb26cfd6a0640fdd, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4a7edf84a1e5e6f4cb26cfd6a0640fdd, type: 3}
       propertyPath: m_LocalScale.x
