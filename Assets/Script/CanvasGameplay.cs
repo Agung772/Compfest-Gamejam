@@ -49,6 +49,7 @@ public class CanvasGameplay : MonoBehaviour
 
     public void Mainmenu()
     {
+        Time.timeScale = 1;
         UIManager.instance.PindahScene("Mainmenu");
 
         AudioManager.instance.ButtonClickSFX();
