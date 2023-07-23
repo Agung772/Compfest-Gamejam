@@ -12,7 +12,7 @@ public class SensorMap : MonoBehaviour
             SpawnMap.instance.Spawn();
 
 
-
+            AudioManager.instance.TutupPinntuSFX();
             animator.SetTrigger("Close");
             Destroy(gameObject);
         }

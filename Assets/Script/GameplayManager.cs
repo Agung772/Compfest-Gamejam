@@ -91,14 +91,14 @@ public class GameplayManager : MonoBehaviour
         if (Player.instance.hp > 50)
         {
             Player.instance.hp -= 50;
-            UIManager.instance.SpawnNotif("Berhasil tingkatkan demege dan mengurangi HP");
+            UIManager.instance.SpawnNotif("Berhasil tingkatkan damage dan mengurangi HP");
             AttackMiniPlayer.instance.demege += 20;
             CanvasGameplay.instance.demegeText.text = AttackMiniPlayer.instance.demege.ToString();
             Player.instance.UpdateUI();
         }
         else
         {
-            UIManager.instance.SpawnNotif("HP kamu tidak cukup untuk tingkatkan demege");
+            UIManager.instance.SpawnNotif("HP kamu tidak cukup untuk tingkatkan damage");
         }
 
         AudioManager.instance.ButtonClickSFX();
