@@ -22,5 +22,6 @@ public class StartScene : MonoBehaviour
         {
 
         }
+        Time.timeScale = 1;
     }
 }

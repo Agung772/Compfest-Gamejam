@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(Coroutine());
         IEnumerator Coroutine()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             SFX = true;
         }
     }
@@ -102,8 +102,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     public AudioClip
         buttonClickSFX,
-        loseSFX,
+        deathSFX,
         sihirSFX,
+        projectileRobotSFX,
+        projectileEnemySFX,
+        tutupPinntuSFX,
+        terkenaHitSFX,
+        changeModeSFX,
         tembokHancurSFX;
 
     bool SFX;
@@ -115,7 +120,12 @@ public class AudioManager : MonoBehaviour
         }
  
     }
-    public void LoseSFX() { audioSource.PlayOneShot(loseSFX); }
+    public void DeathSFX() { audioSource.PlayOneShot(deathSFX); }
     public void SihirSFX() { audioSource.PlayOneShot(sihirSFX); }
     public void TembokHancurSFX() { audioSource.PlayOneShot(tembokHancurSFX); }
+    public void ProjectileRobotSFX() { audioSource.PlayOneShot(projectileRobotSFX); }
+    public void ProjectileEnemySFX() { audioSource.PlayOneShot(projectileEnemySFX); }
+    public void TutupPinntuSFX() { audioSource.PlayOneShot(tutupPinntuSFX); }
+    public void TerkenaHitSFX() { audioSource.PlayOneShot(terkenaHitSFX); }
+    public void ChangeModeSFX() { audioSource.PlayOneShot(changeModeSFX); }
 }

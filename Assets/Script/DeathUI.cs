@@ -15,6 +15,8 @@ public class DeathUI : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Return))
         {
             UIManager.instance.PindahScene("Mainmenu");
+
+            AudioManager.instance.ButtonClickSFX();
         }
 
 
@@ -22,6 +24,8 @@ public class DeathUI : MonoBehaviour
         {
             use = true;
             UIManager.instance.PindahScene("Mainmenu");
+
+            AudioManager.instance.ButtonClickSFX();
         }
         else if (exitTime > 0)
         {

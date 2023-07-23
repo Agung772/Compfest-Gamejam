@@ -71,4 +71,9 @@ public class MainmenuUI : MonoBehaviour
     {
         AudioManager.instance.SetAudio();
     }
+
+    public void Gameplay()
+    {
+        UIManager.instance.PindahScene("Gameplay");
+    }
 }

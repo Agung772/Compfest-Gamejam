@@ -12,6 +12,8 @@ public class Button3D : MonoBehaviour
     private void OnMouseDown()
     {
         animator.SetTrigger("Down");
+
+        AudioManager.instance.ButtonClickSFX();
     }
     private void OnMouseEnter()
     {

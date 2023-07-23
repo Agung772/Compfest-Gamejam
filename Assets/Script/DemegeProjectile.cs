@@ -12,6 +12,8 @@ public class DemegeProjectile : MonoBehaviour
         {
             print("Hit Player");
             collision.collider.GetComponent<Player>().HitPlayer(demege);
+
+            AudioManager.instance.TerkenaHitSFX();
         }
         if (collision.collider.GetComponent<Enemy>())
         {
