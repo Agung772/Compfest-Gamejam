@@ -22,7 +22,7 @@ public class Mode : MonoBehaviour
     {
         if (!active) return;
 
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
             if (!change)
             {
