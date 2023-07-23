@@ -59,6 +59,11 @@ public class Player : MonoBehaviour
         {
             hp = 0;
             GameplayManager.instance.PlayerDeath();
+            active = false;
+
+            Mode.instance.active = false;
+            Mode.instance.miniPlayer.active = false;
+            print("FF");
         }
         UpdateUI();
     }

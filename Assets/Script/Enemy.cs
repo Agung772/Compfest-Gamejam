@@ -17,8 +17,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] Image bar;
     [SerializeField] TextMeshProUGUI hpText;
 
-    private void Start()
+
+    public void Set(int maxHPValue, int demegeValue)
     {
+        maxHp = maxHPValue;
+        demege = demegeValue;
+
         hp = maxHp;
         bar.fillAmount = hp / maxHp;
         hpText.text = hp.ToString();

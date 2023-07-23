@@ -9,7 +9,9 @@ public class GameplayManager : MonoBehaviour
     public static GameplayManager instance;
 
     public int stage;
+    public int maxHPEnemy = 100;
     public int demegeEnemy = 20;
+
 
     private void Awake()
     {
@@ -29,8 +31,15 @@ public class GameplayManager : MonoBehaviour
         CanvasGameplay.instance.stageText.text = "Tingkat : " + stage;
     }
 
+    bool useDeathUI;
     public void PlayerDeath()
     {
+        if (!useDeathUI)
+        {
+            useDeathUI = true;
+            CanvasGameplay.instance.deathUI.gameObject.SetActive(true);
+            CanvasGameplay.instance.deathUI.Set(stage);
+        }
 
     }
 
@@ -47,7 +56,7 @@ public class GameplayManager : MonoBehaviour
         Enemy[] enemys = FindObjectsOfType<Enemy>();
         for (int i = 0; i < enemys.Length; i++)
         {
-            enemys[i].demege = demegeEnemy;
+            enemys[i].Set(maxHPEnemy, demegeEnemy);
         }
     }
 }

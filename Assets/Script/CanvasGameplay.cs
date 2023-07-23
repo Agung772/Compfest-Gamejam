@@ -19,6 +19,8 @@ public class CanvasGameplay : MonoBehaviour
     public TextMeshProUGUI demegeText;
     public TextMeshProUGUI stageText;
 
+    public DeathUI deathUI;
+
     private void Awake()
     {
         instance = this;
